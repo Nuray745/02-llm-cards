@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Dashboard</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>LLM Dashboard</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="how-it-works.html">How It Works</a>
+  </nav>
+
+  <main>
+
+    <!-- WHAT IS LLM -->
+    <section id="what-is-llm">
+
+      <h2>What is an LLM?</h2>
+
+      <p>
+        LLM stands for Large Language Model. It is a type of artificial intelligence model trained on large amounts of text data.
+      </p>
+
+      <p>
+        LLMs learn patterns in language and generate human-like text by predicting the next token in a sequence.
+      </p>
+
+      <p>
+        Examples of LLMs include GPT-4o by OpenAI, Claude Sonnet 4 by Anthropic, and Gemini 1.5 Pro by Google.
+      </p>
+
+    </section>
+
+    <!-- WHAT IS TOKEN -->
+    <section id="what-is-token">
+
+      <h2>What is a Token?</h2>
+
+      <p>
+        A token is a small piece of text used by LLMs. It can be a word, part of a word, or even a single character.
+      </p>
+
+      <p>
+        Tokens matter because LLMs measure input size and pricing based on tokens.
+      </p>
+
+      <p>
+        Example:
+        "Hello, world!" → ["Hello", ",", " world", "!"]
+      </p>
+
+      <p>
+        In English, fewer tokens are usually needed compared to Azerbaijani because Azerbaijani words can be longer and more complex.
+      </p>
+
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section id="comparison">
+
+      <h2>LLM Comparison</h2>
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Model</th>
+            <th>Provider</th>
+            <th>Context Window</th>
+            <th>Input Price</th>
+            <th>Output Price</th>
+            <th>Reasoning</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>GPT-4o</td>
+            <td>OpenAI</td>
+            <td>128K</td>
+            <td>$5</td>
+            <td>$15</td>
+            <td class="reasoning-yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Claude Sonnet 4</td>
+            <td>Anthropic</td>
+            <td>200K</td>
+            <td>$3</td>
+            <td>$15</td>
+            <td class="reasoning-yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Gemini 1.5 Pro</td>
+            <td>Google</td>
+            <td>1M</td>
+            <td>$3.5</td>
+            <td>$10.5</td>
+            <td class="reasoning-yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Llama 3.1 70B</td>
+            <td>Meta</td>
+            <td>128K</td>
+            <td>$0</td>
+            <td>$0</td>
+            <td class="reasoning-no">✗</td>
+          </tr>
+
+          <tr>
+            <td>Mistral Large 2</td>
+            <td>Mistral</td>
+            <td>128K</td>
+            <td>$4</td>
+            <td>$12</td>
+            <td class="reasoning-no">✗</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+    <!-- MODEL CARDS -->
+    <section id="model-cards">
+
+      <h2>Model Cards</h2>
+
+      <div class="cards-grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+
+          <div class="card-header">
+            <span class="card-provider">OPENAI</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+
+          <h3 class="card-name">GPT-4o</h3>
+
+          <p class="card-tagline">
+            Best for multimodal tasks, coding assistance, and voice interactions.
+          </p>
+
+          <ul class="card-specs">
+
+            <li>
+              <span class="spec-label">Context</span>
+              <span class="spec-value">128K</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Input</span>
+              <span class="spec-value">$5 / 1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Output</span>
+              <span class="spec-value">$15 / 1M</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+
+          <div class="card-header">
+            <span class="card-provider">ANTHROPIC</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+
+          <h3 class="card-name">Claude Sonnet 4</h3>
+
+          <p class="card-tagline">
+            Best for complex analysis, long documents, and agentic workflows.
+          </p>
+
+          <ul class="card-specs">
+
+            <li>
+              <span class="spec-label">Context</span>
+              <span class="spec-value">200K</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Input</span>
+              <span class="spec-value">$3 / 1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Output</span>
+              <span class="spec-value">$15 / 1M</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+
+          <div class="card-header">
+            <span class="card-provider">GOOGLE</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+
+          <h3 class="card-name">Gemini 1.5 Pro</h3>
+
+          <p class="card-tagline">
+            Best for tasks requiring a very long context window.
+          </p>
+
+          <ul class="card-specs">
+
+            <li>
+              <span class="spec-label">Context</span>
+              <span class="spec-value">1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Input</span>
+              <span class="spec-value">$3.5 / 1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Output</span>
+              <span class="spec-value">$10.5 / 1M</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+
+          <div class="card-header">
+            <span class="card-provider">META</span>
+            <span class="card-reasoning reasoning-no">No Reasoning</span>
+          </div>
+
+          <h3 class="card-name">Llama 3.1 70B</h3>
+
+          <p class="card-tagline">
+            Best for cost-efficient deployments and open-source customisation.
+          </p>
+
+          <ul class="card-specs">
+
+            <li>
+              <span class="spec-label">Context</span>
+              <span class="spec-value">128K</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Input</span>
+              <span class="spec-value">$0.59 / 1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Output</span>
+              <span class="spec-value">$0.79 / 1M</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+
+          <div class="card-header">
+            <span class="card-provider">MISTRAL</span>
+            <span class="card-reasoning reasoning-no">No Reasoning</span>
+          </div>
+
+          <h3 class="card-name">Mistral Large 2</h3>
+
+          <p class="card-tagline">
+            Best for European compliance requirements and multilingual tasks.
+          </p>
+
+          <ul class="card-specs">
+
+            <li>
+              <span class="spec-label">Context</span>
+              <span class="spec-value">128K</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Input</span>
+              <span class="spec-value">$2 / 1M</span>
+            </li>
+
+            <li>
+              <span class="spec-label">Output</span>
+              <span class="spec-value">$6 / 1M</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Sources: OpenAI Docs, Anthropic Docs, Google AI Docs, artificialanalysis.ai
+    </p>
+  </footer>
+
+</body>
+
+</html>
