@@ -2,42 +2,130 @@ function cleanText(text) {
   return text.trim();
 }
 
-console.log(cleanText("  Hello world  "));
-
 function splitIntoWords(text) {
   return text.split(" ");
 }
 
-console.log(splitIntoWords("The quick brown fox"));
-
 function removeEmptyWords(words) {
+
   return words.filter(function(word) {
     return word !== "";
   });
+
 }
-
-const messy = splitIntoWords("Hello   world");
-
-console.log(messy);
-console.log(removeEmptyWords(messy));
 
 function estimateTokens(words) {
   return Math.ceil(words.length * 0.75);
 }
 
-const words = ["The", "quick", "brown", "fox"];
-
-console.log(estimateTokens(words));
-
 function countTokens(text) {
+
   const cleaned = cleanText(text);
+
   const words = splitIntoWords(cleaned);
+
   const filtered = removeEmptyWords(words);
 
   return estimateTokens(filtered);
+
 }
 
-console.log(countTokens("Hello"));
-console.log(countTokens("Hello, world!"));
-console.log(countTokens("The quick brown fox jumps over the lazy dog"));
-console.log(countTokens("  I am learning JavaScript   today  "));
+function analyzeText(text) {
+
+  const cleaned = cleanText(text);
+
+  const words = splitIntoWords(cleaned);
+
+  const filtered = removeEmptyWords(words);
+
+  return {
+
+    characters: cleaned.length,
+
+    words: filtered.length,
+
+    tokens: estimateTokens(filtered)
+
+  };
+
+}
+
+
+const textarea =
+  document.querySelector('#inputText');
+
+const statChars =
+  document.querySelector('#stat-chars');
+
+const statWords =
+  document.querySelector('#stat-words');
+
+const statTokens =
+  document.querySelector('#stat-tokens');
+
+const saveBtn =
+  document.querySelector('#save-btn');
+
+const historyList =
+  document.querySelector('#history-list');
+
+
+textarea.addEventListener('input', function () {
+
+  const analysis =
+    analyzeText(textarea.value);
+
+  statChars.textContent =
+    'Characters: ' + analysis.characters;
+
+  statWords.textContent =
+    'Words: ' + analysis.words;
+
+  statTokens.textContent =
+    'Estimated tokens: ' + analysis.tokens;
+
+});
+
+
+
+const history = [];
+
+saveBtn.addEventListener('click', function () {
+
+  const analysis =
+    analyzeText(textarea.value);
+
+  analysis.label =
+    'Snapshot ' + (history.length + 1);
+
+  history.push(analysis);
+
+  renderHistory();
+
+});
+
+
+function renderHistory() {
+
+  historyList.innerHTML = '';
+
+  history.forEach(function(entry) {
+
+    const li =
+      document.createElement('li');
+
+    li.textContent =
+      entry.label +
+      ' - ' +
+      entry.tokens +
+      ' tokens, ' +
+      entry.words +
+      ' words, ' +
+      entry.characters +
+      ' characters';
+
+    historyList.appendChild(li);
+
+  });
+
+}

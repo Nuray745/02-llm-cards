@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Token Counter</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -36,9 +37,27 @@
         placeholder="Type or paste your text here..."
       ></textarea>
 
-      <p id="result">
-        Estimated tokens: 0
-      </p>
+      <div id="stats">
+
+        <span id="stat-chars">
+          Characters: 0
+        </span>
+
+        <span id="stat-words">
+          Words: 0
+        </span>
+
+        <span id="stat-tokens">
+          Estimated tokens: 0
+        </span>
+
+      </div>
+
+      <button id="save-btn">
+        Save Snapshot
+      </button>
+
+      <ul id="history-list"></ul>
 
     </section>
 
